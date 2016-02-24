@@ -12,7 +12,7 @@ import Ejercicios2.model.Libro_model;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/Modificar")
+@WebServlet({"/Modificar" , "/Libro/Modificar"})
 public class Modificar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,7 +31,7 @@ public class Modificar extends HttpServlet {
 		
 		request.setAttribute("libro", libro);
 		
-		request.getRequestDispatcher("views/modificarLibro.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/modificarLibro.jsp").forward(request, response);
 		
 	}
 
@@ -54,7 +54,7 @@ public class Modificar extends HttpServlet {
 		
 		request.setAttribute("listaLibros", listaLibros);
                 
-                request.getRequestDispatcher("views/listadoLibros.jsp").forward(request, response);
+                request.getRequestDispatcher("/views/listadoLibros.jsp").forward(request, response);
 		
 	}
 

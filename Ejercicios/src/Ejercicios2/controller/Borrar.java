@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import Ejercicios2.beans.Libro;
 import Ejercicios2.model.Libro_model;
 
-@WebServlet("/Borrar")
+@WebServlet({"/Borrar" , "/Libro/Borrar"})
 public class Borrar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +35,7 @@ public class Borrar extends HttpServlet {
 		
 		request.setAttribute("listaLibros", listaLibros);
 		
-		request.getRequestDispatcher("views/listadoLibros.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/listadoLibros.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

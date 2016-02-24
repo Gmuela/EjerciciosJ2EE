@@ -1,9 +1,6 @@
 package Ejercicios2.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import Ejercicios2.beans.Libro;
+import Ejercicios2.helper.Helper;
 import Ejercicios2.model.Libro_model;
 
-@WebServlet("/Crear")
+@WebServlet({"/Crear" , "/Libro/Crear"})
 
 public class Crear extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,11 +21,12 @@ public class Crear extends HttpServlet {
 		super();
 
 	}
-
+  
+        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.getRequestDispatcher("views/formularioLibros.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/formularioLibros.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -43,7 +42,7 @@ public class Crear extends HttpServlet {
 		
 		if (insertado){
 			
-			response.sendRedirect("Listar");
+			response.sendRedirect(Helper.getBaseUrl(request)+"Libro/Listar");
 			
 		}
 	}

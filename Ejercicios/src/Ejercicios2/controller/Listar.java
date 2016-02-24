@@ -14,7 +14,7 @@ import Ejercicios2.beans.Libro;
 import Ejercicios2.model.Libro_model;
 
 
-@WebServlet("/Listar")
+@WebServlet({"/Listar" , "/Libro/Listar"})
 public class Listar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,7 +33,7 @@ public class Listar extends HttpServlet {
 		
 		request.setAttribute("listaLibros", listaLibros);
 		
-		request.getRequestDispatcher("views/listadoLibros.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/listadoLibros.jsp").forward(request, response);
 		
 	}
 
