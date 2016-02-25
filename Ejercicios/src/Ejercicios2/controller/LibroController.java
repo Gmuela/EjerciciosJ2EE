@@ -13,8 +13,6 @@ public class LibroController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        ejecutar(request,response);
                
     }
 
@@ -23,24 +21,9 @@ public class LibroController extends HttpServlet {
 
     }
 
-    protected void ejecutar(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        
-        
-        String[] partes = request.getPathInfo() != null ? request.getPathInfo().split("/") : null;
-        
-        String accion = (partes != null && partes.length > 0 ? partes[1] : "index");
-        
-        response.getWriter().print(accion);
-        response.getWriter().print(Helper.getBaseUrl(request));
-        
-        /*if(accion.equalsIgnoreCase("index")){
-        
-            request.getRequestDispatcher("index.jsp");
-            
-        }
-        
-        response.sendRedirect(accion);*/
+    protected static void ejecutar(String accion, HttpServletRequest request, HttpServletResponse response) throws IOException {       
+               
+        response.sendRedirect(Helper.getBaseUrl(request)+accion);
         
     }
 

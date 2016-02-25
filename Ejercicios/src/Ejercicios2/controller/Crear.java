@@ -42,7 +42,7 @@ public class Crear extends HttpServlet {
 		
 		if (insertado){
 			
-			response.sendRedirect(Helper.getBaseUrl(request)+"Libro/Listar");
+			LibroController.ejecutar("Listar",request,response);
 			
 		}
 	}

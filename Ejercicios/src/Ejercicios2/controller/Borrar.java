@@ -29,13 +29,7 @@ public class Borrar extends HttpServlet {
 		
 		new Libro_model().borrarLibro(id);
 
-		List<Libro> listaLibros = new ArrayList<Libro>();
-		
-		listaLibros = new Libro_model().listarLibros();			
-		
-		request.setAttribute("listaLibros", listaLibros);
-		
-		request.getRequestDispatcher("/views/listadoLibros.jsp").forward(request, response);
+		LibroController.ejecutar("Listar",request,response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
