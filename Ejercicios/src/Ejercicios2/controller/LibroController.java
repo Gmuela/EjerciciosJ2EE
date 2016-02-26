@@ -12,13 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 public class LibroController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-               
+            throws ServletException, IOException {               
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     protected static void ejecutar(String accion, HttpServletRequest request, HttpServletResponse response) throws IOException {       

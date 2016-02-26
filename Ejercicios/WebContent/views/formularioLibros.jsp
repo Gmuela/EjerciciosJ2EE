@@ -12,6 +12,6 @@
 		Categoría <input type='text' name='cat'/>
 		<input type='submit' value='Enviar' />
 	</form>
-	<a href="/Libro/Listar">Lista de Libros</a>
+	<a href="Listar">Lista de Libros</a>
 </body>
 </html>

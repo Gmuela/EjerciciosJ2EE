@@ -29,12 +29,12 @@ table, tr, th, td {
 				<td>${libro.titulo}</td>
 				<td>${libro.categoria}</td>
 				<td>${libro.isbn}</td>
-				<td><a href="/Libro/Borrar?id=${libro.id}">Borrar</a></td>
-				<td><a href="/Libro/Modificar?id=${libro.id}">Modificar</a></td>
+				<td><a href="Borrar?id=${libro.id}">Borrar</a></td>
+				<td><a href="Modificar?id=${libro.id}">Modificar</a></td>
 				
 			</tr>
 		</jstl:forEach>
 	</table>
-	<a href="/Libro/Crear">Crear Libro</a>
+	<a href="Crear">Crear Libro</a>
 </body>
 </html>
