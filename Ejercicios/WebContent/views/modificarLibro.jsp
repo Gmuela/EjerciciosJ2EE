@@ -14,6 +14,6 @@
 		<input type="hidden" name="id" value="${libro.id}"/>
 		<input type='submit' value='Enviar' />
 	</form>
-	<a href="Listar">Lista de Libros</a>
+	<a href="${baseUrl}Listar">Lista de Libros</a>
 </body>
 </html>

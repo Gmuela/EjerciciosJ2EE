@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Ejercicios2.beans.Libro;
+import Ejercicios2.helper.Helper;
 import Ejercicios2.model.Libro_model;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,10 @@ public class Modificar extends HttpServlet {
 		Libro libro = new Libro_model().getLibro(id);
 		
 		request.setAttribute("libro", libro);
+		
+		String baseUrl = Helper.getBaseUrl(request);
+		
+		request.setAttribute("baseUrl", baseUrl);
 		
 		request.getRequestDispatcher("/views/modificarLibro.jsp").forward(request, response);
 		

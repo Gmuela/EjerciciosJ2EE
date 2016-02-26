@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Ejercicios2.beans.Libro;
+import Ejercicios2.helper.Helper;
 import Ejercicios2.model.Libro_model;
 
 
@@ -32,6 +33,10 @@ public class Listar extends HttpServlet {
 		listaLibros = new Libro_model().listarLibros();			
 		
 		request.setAttribute("listaLibros", listaLibros);
+		
+		String baseUrl = Helper.getBaseUrl(request);
+		
+		request.setAttribute("baseUrl", baseUrl);
 		
 		request.getRequestDispatcher("/views/listadoLibros.jsp").forward(request, response);
 		

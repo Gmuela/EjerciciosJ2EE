@@ -35,6 +35,6 @@ table, tr, th, td {
 			</tr>
 		</jstl:forEach>
 	</table>
-	<a href="Crear">Crear Libro</a>
+	<a href="${baseUrl}Crear">Crear Libro</a>
 </body>
 </html>

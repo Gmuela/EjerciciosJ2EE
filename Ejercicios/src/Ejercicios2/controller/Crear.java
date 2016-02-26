@@ -24,7 +24,11 @@ public class Crear extends HttpServlet {
   
         
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException {		
+		
+		String baseUrl = Helper.getBaseUrl(request);
+		
+		request.setAttribute("baseUrl", baseUrl);
 		
 		request.getRequestDispatcher("/views/formularioLibros.jsp").forward(request, response);
 	}
