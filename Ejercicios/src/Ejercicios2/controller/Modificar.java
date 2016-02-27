@@ -11,48 +11,46 @@ import Ejercicios2.beans.Libro;
 import Ejercicios2.helper.Helper;
 import Ejercicios2.model.Libro_model;
 
-@WebServlet({"/Modificar" , "/Libro/Modificar"})
+@WebServlet({"/Modificar"})
 public class Modificar extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    
+
+    private static final long serialVersionUID = 1L;
+
     public Modificar() {
         super();
-        
+
     }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Long id = Long.parseLong(request.getParameter("id"));
-		
-		Libro libro = new Libro_model().getLibro(id);
-		
-		request.setAttribute("libro", libro);
-		
-		String baseUrl = Helper.getBaseUrl(request);
-		
-		request.setAttribute("baseUrl", baseUrl);
-		
-		request.getRequestDispatcher("/views/modificarLibro.jsp").forward(request, response);
-		
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String titulo = request.getParameter("tit");
-		
-		String categoria = request.getParameter("cat");
-		
-		int isbn = Integer.parseInt(request.getParameter("isbn"));
-		
-		Long id = Long.parseLong(request.getParameter("id"));	
-		
-		new Libro_model().modificarLibro(titulo, categoria, isbn, id);
-                
-                LibroController.ejecutar("Listar",request,response);
-		
-	}
+        Long id = Long.parseLong(request.getParameter("id"));
+
+        Libro libro = new Libro_model().getLibro(id);
+
+        request.setAttribute("libro", libro);
+
+        String baseUrl = Helper.getBaseUrl(request);
+
+        request.setAttribute("baseUrl", baseUrl);
+
+        request.getRequestDispatcher("/views/modificarLibro.jsp").forward(request, response);
+
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String titulo = request.getParameter("tit");
+
+        String categoria = request.getParameter("cat");
+
+        int isbn = Integer.parseInt(request.getParameter("isbn"));
+
+        Long id = Long.parseLong(request.getParameter("id"));
+
+        new Libro_model().modificarLibro(titulo, categoria, isbn, id);
+
+        LibroController.ejecutar("Listar", request, response);
+
+    }
 
 }

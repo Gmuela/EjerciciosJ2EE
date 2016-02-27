@@ -7,46 +7,46 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import Ejercicios2.beans.Libro;
 import Ejercicios2.helper.Helper;
 import Ejercicios2.model.Libro_model;
 
-@WebServlet({"/Crear" , "/Libro/Crear"})
+@WebServlet({"/Crear"})
 
 public class Crear extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	public Crear() {
-		super();
+    private static final long serialVersionUID = 1L;
 
-	}
-        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {		
-		
-		String baseUrl = Helper.getBaseUrl(request);
-		
-		request.setAttribute("baseUrl", baseUrl);
-		
-		request.getRequestDispatcher("/views/formularioLibros.jsp").forward(request, response);
-	}
+    public Crear() {
+        super();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-		String titulo = request.getParameter("tit");
-		String categoria = request.getParameter("cat");
-		int isbn = Integer.parseInt(request.getParameter("isbn"));
-		
-		Libro libro = new Libro(titulo,categoria,isbn);
-		
-		boolean insertado = new Libro_model().insertarLibro(libro);
-		
-		if (insertado){
-			
-			LibroController.ejecutar("Listar",request,response);
-			
-		}
-	}
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String baseUrl = Helper.getBaseUrl(request);
+
+        request.setAttribute("baseUrl", baseUrl);
+
+        request.getRequestDispatcher("/views/formularioLibros.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String titulo = request.getParameter("tit");
+        String categoria = request.getParameter("cat");
+        int isbn = Integer.parseInt(request.getParameter("isbn"));
+
+        Libro libro = new Libro(titulo, categoria, isbn);
+
+        boolean insertado = new Libro_model().insertarLibro(libro);
+
+        if (insertado) {
+
+            LibroController.ejecutar("Listar", request, response);
+
+        }
+    }
 }

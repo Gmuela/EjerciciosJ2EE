@@ -4,9 +4,25 @@
         <servlet-name>LibroController</servlet-name>
         <servlet-class>Ejercicios2.controller.LibroController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>Ejercicios2.controller.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IndexLibro</servlet-name>
+        <servlet-class>Ejercicios2.controller.IndexLibro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LibroController</servlet-name>
         <url-pattern>/LibroController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IndexLibro</servlet-name>
+        <url-pattern>/IndexLibro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
