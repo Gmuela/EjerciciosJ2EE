@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import Ejercicios2.beans.Libro;
 import Ejercicios2.helper.Helper;
 import Ejercicios2.model.Libro_model;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet({"/Modificar" , "/Libro/Modificar"})
 public class Modificar extends HttpServlet {

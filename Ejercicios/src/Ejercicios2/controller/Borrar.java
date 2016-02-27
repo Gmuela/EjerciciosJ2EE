@@ -1,8 +1,6 @@
 package Ejercicios2.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Ejercicios2.beans.Libro;
 import Ejercicios2.model.Libro_model;
 
 @WebServlet({"/Borrar" , "/Libro/Borrar"})

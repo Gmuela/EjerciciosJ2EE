@@ -1,0 +1,300 @@
+body {
+	width: 500px;
+	background-color: #E0DBDB;
+}
+
+header {
+	/* background-color:red; */	
+	width: 100%;
+	text-align: center;
+}
+
+header .titulo {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+
+header div#usuario {
+	/*background-color:orange;*/
+	float: right;
+}
+
+/* Main Navigation */
+nav {
+	float: left;
+	width: 100%;
+}
+
+section#cuerpo {
+	/*background-color:yellow;*/
+	float: left;
+	width: 100%;
+}
+
+footer {
+	/*background-color:green;*/
+	float: left;
+	width: 100%;
+	text-align: left;
+}
+
+.operacionOk {
+	background-color: lightgreen; 
+}
+.operacionFallida {
+		background-color: red;
+}
+
+
+nav ul#navigation {
+	margin: 0px auto;
+	position: relative;
+	float: left;
+	border-left: 1px solid #c4dbe7;
+	border-right: 1px solid #c4dbe7;
+}
+
+nav ul#navigation li {
+	display: inline;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	float: left;
+	position: relative;
+	border-top: 1px solid #c4dbe7;
+	border-bottom: 2px solid #c4dbe7;
+}
+
+nav ul#navigation li a {
+	padding: 10px 25px;
+	color: #616161;
+	text-shadow: 1px 1px 0px #fff;
+	text-decoration: none;
+	display: inline-block;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #C2C2C2;
+	border-top: 1px solid #fff;
+	background: #f5f5f5;
+	-webkit-transition: color 0.2s linear, background 0.2s linear;
+	-moz-transition: color 0.2s linear, background 0.2s linear;
+	-o-transition: color 0.2s linear, background 0.2s linear;
+	transition: color 0.2s linear, background 0.2s linear;
+}
+
+nav ul#navigation li a:hover {
+	background: #f8f8f8;
+	color: #282828;
+}
+
+nav ul#navigation li a.first {
+	border-left: 0 none;
+}
+
+nav ul#navigation li a.last {
+	border-right: 0 none;
+}
+
+nav ul#navigation li:hover>a {
+	background: #fff;
+}
+
+/* Drop-Down Navigation */
+nav ul#navigation li:hover>ul {
+	/*these 2 styles are very important, 
+being the ones which make the drop-down to appear on hover */
+	visibility: visible;
+	opacity: 1;
+}
+
+nav ul#navigation ul, nav ul#navigation ul li ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	/*the next 2 styles are very important, 
+being the ones which make the drop-down to stay hidden */
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	z-index: 99999;
+	width: 180px;
+	background: #f8f8f8;
+	box-shadow: 1px 1px 3px #ccc;
+	/* css3 transitions for smooth hover effect */
+	-webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+	-moz-transition: opacity 0.2s linear, visibility 0.2s linear;
+	-o-transition: opacity 0.2s linear, visibility 0.2s linear;
+	transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+nav ul#navigation ul {
+	top: 43px;
+	left: 1px;
+}
+
+nav ul#navigation ul li ul {
+	top: 0;
+	left: 181px; /* strong related to width:180px; from above */
+}
+
+nav ul#navigation ul li {
+	clear: both;
+	width: 100%;
+	border: 0 none;
+	border-bottom: 1px solid #c9c9c9;
+}
+
+nav ul#navigation ul li a {
+	background: none;
+	padding: 7px 15px;
+	color: #616161;
+	text-shadow: 1px 1px 0px #fff;
+	text-decoration: none;
+	display: inline-block;
+	border: 0 none;
+	float: left;
+	clear: both;
+	width: 150px;
+}
+
+/* Formularios */
+form {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+	background: #F7F7F7;
+	padding: 25px 15px 25px 10px;
+	font: 12px Georgia, "Times New Roman", Times, serif;
+	color: #888;
+	text-shadow: 1px 1px 1px #FFF;
+	border: 1px solid #E4E4E4;
+}
+
+form h1 {
+	font-size: 25px;
+	padding: 0px 0px 10px 40px;
+	display: block;
+	border-bottom: 1px solid #E4E4E4;
+	margin: -10px -15px 30px -10px;;
+	color: #888;
+}
+
+form h1>span {
+	display: block;
+	font-size: 11px;
+}
+
+form label {
+	display: block;
+	margin: 0px;
+}
+
+form label>span {
+	float: left;
+	width: 20%;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 10px;
+	color: #888;
+}
+
+form input[type="text"], form input[type="email"], form textarea, form select
+	{
+	border: 1px solid #DADADA;
+	color: #888;
+	height: 30px;
+	margin-bottom: 16px;
+	margin-right: 6px;
+	margin-top: 2px;
+	outline: 0 none;
+	padding: 3px 3px 3px 5px;
+	width: 70%;
+	font-size: 12px;
+	line-height: 15px;
+	box-shadow: inset 0px 1px 4px #ECECEC;
+	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
+	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+form textarea {
+	padding: 5px 3px 3px 5px;
+}
+
+form select {
+	background: #FFF url('down-arrow.png') no-repeat right;
+	background: #FFF url('down-arrow.png') no-repeat right;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	width: 70%;
+	height: 35px;
+	line-height: 25px;
+}
+
+form textarea {
+	height: 100px;
+}
+
+form .button {
+	background: #E27575;
+	border: none;
+	padding: 10px 25px 10px 25px;
+	color: #FFF;
+	box-shadow: 1px 1px 5px #B6B6B6;
+	border-radius: 3px;
+	text-shadow: 1px 1px 1px #9E3F3F;
+	cursor: pointer;
+}
+
+form .button:hover {
+	background: #CF7A7A
+}
+
+input {
+    
+    display: block;
+    
+}
+
+table, tr, td, th {
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+    background: #F7F7F7;
+    padding: 25px 15px 25px 10px;
+    font: 15px Georgia, "Times New Roman", Times, serif;
+    color: #888;
+    
+}
+
+th{
+    
+    font-weight: bold;
+    color: darkslategray;
+    
+}
+
+a{
+    
+    text-decoration: none;
+    color: darkslategray;
+    font-weight: bold;    
+    transition: ALL 0.2s linear
+    
+}
+
+a.mod:hover{
+    
+    color: cornflowerblue;
+    
+}
+
+a.bor:hover{
+    
+    color: red;
+    
+}
+
