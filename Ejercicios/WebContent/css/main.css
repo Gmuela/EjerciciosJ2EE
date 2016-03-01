@@ -267,6 +267,7 @@ table, tr, td, th {
     padding: 25px 15px 25px 10px;
     font: 15px Georgia, "Times New Roman", Times, serif;
     color: #888;
+    text-align: center;
 
 }
 
@@ -286,23 +287,24 @@ a{
 
 }
 
-a.mod:hover{
-
-    color: cornflowerblue;
-
-}
-
-a.bor:hover{
-
-    color: red;
-
-}
-
 h1{
-    
+
     font-size: 25px;    
     display: block;    
     color: #888;
 
 }
 
+img.imgMod, img.imgBor{
+
+    opacity: 0.25;
+    height: 20%;
+    transition: ALL 0.3s linear
+
+}
+
+img.imgMod:hover, img.imgBor:hover{
+
+    opacity: 1;
+
+}
