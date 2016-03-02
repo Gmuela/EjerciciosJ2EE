@@ -19,7 +19,6 @@ public class Crear extends HttpServlet {
 
     public Crear() {
         super();
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
