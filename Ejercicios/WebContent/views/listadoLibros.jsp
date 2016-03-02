@@ -13,9 +13,8 @@
                 <td>${libro.titulo}</td>
                 <td>${libro.categoria}</td>
                 <td>${libro.isbn}</td>
-                <td><a href="${baseUrl}Modificar?id=${libro.id}" class="mod"><img class="imgMod" src="/img/edit.png"></a></td>
-                <td><a href="${baseUrl}Borrar?id=${libro.id}" class="bor"><img class="imgBor" src="/img/delete.png"></a></td>
-
+                <td><a href="${baseUrl}Modificar?id=${libro.id}" class="mod"><img class="imgMod" src="img/edit.png"></a></td>
+                <td><a href="${baseUrl}Borrar?id=${libro.id}" class="bor"><img class="imgBor" src="img/delete.png"></a></td>
             </tr>
         </jstl:forEach>
     </table>
